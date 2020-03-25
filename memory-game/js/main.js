@@ -20,6 +20,26 @@ var cards = [
 	cardImge: "images/king-of-dimonds.png"
 }
 ];
+
+function createBoard() {
+	let cardElement = document.createElement('cardImge')[0];
+	let cardElement = document.createElement('cardImge')[1];
+	let cardElement = document.createElement('cardImge')[2];
+	let cardElement = document.createElement('cardImge')[3];
+	// <img src="images/back.png" alt="Queen of Diamonds">
+	// <img src="images/back.png" alt="Queen of Hearts">
+	// <img src="images/back.png" alt="King of Diamonds">
+	// <img src="images/back.png" alt="King of Hearts">
+
+	for (var i = 0; i < cards.length; i++) {
+		cards[i]
+		cardElement.setAttribute('src', 'images/back.png');
+		cardElement.setAttribute('data-id', cards[i]);
+		elememt.addEventListener('click', 'flipCard');
+		document.getElementById('game-board').appendChild('cardElement')
+	}
+
+}
 var cardsInPlay = [];
 
 function checkForMatch() {
@@ -38,9 +58,6 @@ function flipCard(cardId) {
     console.log(cards[cardId].suit);
     cardsInPlay.push(cards[cardId].rank);
     checkForMatch();
-
 }
 
-
-flipCard(0);
-flipCard(2);
+createBoard();
